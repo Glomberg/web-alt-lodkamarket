@@ -21,12 +21,60 @@
 	<![endif]-->
 </head>
 <body>
-<div class="container">
+<nav class="container">
 	<div class="row">
 		<div class="col-xs-12">
+			<ul>
+				<li><a href="#"><span>Серия лодок</span></a></li>
+				<li><a href="#"><span>Длина лодки</span></a></li>
+				<li><a href="#"><span>Количество пассажиров</span></a></li>
+				<li><a href="#"><span>Мощность мотора / MAX</span></a></li>
+				<li><a href="#"><span>Вес лодки</span></a></li>
+				<li><a href="#"><span>Тип пола</span></a></li>
+				<li class="active"><a href="#"><span>Цена</span></a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12"><p>Выберите диапазон цен:</p></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
 			<div class="slider-wrapper">
-				<div id="slider" data-min-value="0" data-max-value="1000"></div>
+				<div id="histogram">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div style="height: 4px"></div>
+					<div style="height: 6px"></div>
+					<div style="height: 12px"></div>
+					<div style="height: 8px"></div>
+					<div style="height: 4px"></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div style="height: 4px"></div>
+					<div style="height: 6px"></div>
+					<div></div>
+					<div></div>
+					<div style="height: 2px"></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div id="slider" data-min-value="10000" data-max-value="100000"></div>
 			</div>
+		</div>
+		<div class="col-xs-1"></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<label for="minCost">от<input type="text" id="minCost" value="25000"/></label>
+			<label for="maxCost">до<input type="text" id="maxCost" value="75000"/></label>
 		</div>
 	</div>
 </div>
