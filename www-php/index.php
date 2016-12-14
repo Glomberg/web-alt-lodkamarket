@@ -20,22 +20,81 @@
 	   </script>
 	<![endif]-->
 </head>
-<body>
+<body class="filter-page">
 <nav class="container">
 	<div class="row">
 		<div class="col-xs-12">
 			<ul>
-				<li><a href="#"><span>Серия лодок</span></a></li>
-				<li><a href="#"><span>Длина лодки</span></a></li>
-				<li><a href="#"><span>Количество пассажиров</span></a></li>
-				<li><a href="#"><span>Мощность мотора / MAX</span></a></li>
-				<li><a href="#"><span>Вес лодки</span></a></li>
-				<li><a href="#"><span>Тип пола</span></a></li>
-				<li class="active"><a href="#"><span>Цена</span></a></li>
+				<li><a href="#series"><span>Серия лодок</span></a></li>
+				<li><a href="#length"><span>Длина лодки</span></a></li>
+				<li><a href="#passengers"><span>Количество пассажиров</span></a></li>
+				<li><a href="#power"><span>Мощность мотора / MAX</span></a></li>
+				<li><a href="#weight"><span>Вес лодки</span></a></li>
+				<li><a href="#floor"><span>Тип пола</span></a></li>
+				<li><a href="#price"><span>Цена</span></a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
+
+<div class="container checboxes" id="series">
+	<div class="row">
+		<div class="col-xs-12">
+			<input type="checkbox" name="" id="series-chbx1"><label for="series-chbx1">Клапан исбыточного давления</label>
+			<input type="checkbox" name="" id="series-chbx2"><label for="series-chbx2">Носовой тент</label>
+			<input type="checkbox" name="" id="series-chbx3"><label for="series-chbx3">Носовая сумка</label>
+			<input type="checkbox" name="" id="series-chbx4"><label for="series-chbx4">Бронированный балон</label>
+			<input type="checkbox" name="" id="series-chbx5"><label for="series-chbx5">Носовая сумка</label>
+			<input type="checkbox" name="" id="series-chbx6"><label for="series-chbx6">Клапан исбыточного давления</label>
+			<input type="checkbox" name="" id="series-chbx7"><label for="series-chbx7">Бронированный балон</label>
+		</div>
+	</div>
+</div>
+
+<div class="container slider-1" id="length">
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="slider-length" data-min-value="100" data-max-value="800"></div>
+		</div>
+	</div>
+</div>
+
+<div class="container slider-1" id="passengers">
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="slider-passengers" data-min-value="1" data-max-value="10"></div>
+		</div>
+	</div>
+</div>
+
+<div class="container slider-1" id="power">
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="slider-power" data-min-value="5" data-max-value="120"></div>
+		</div>
+	</div>
+</div>
+
+<div class="container slider-1" id="weight">
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="slider-weigth" data-min-value="10" data-max-value="300"></div>
+		</div>
+	</div>
+</div>
+
+<div class="container checboxes" id="floor">
+	<div class="row">
+		<div class="col-xs-12">
+			<input type="checkbox" name="" id="floor-chbx1"><label for="floor-chbx1">Тип 1</label>
+			<input type="checkbox" name="" id="floor-chbx2"><label for="floor-chbx2">Тип 2</label>
+			<input type="checkbox" name="" id="floor-chbx3"><label for="floor-chbx3">Тип 3</label>
+			<input type="checkbox" name="" id="floor-chbx4"><label for="floor-chbx4">Тип 4</label>
+		</div>
+	</div>
+</div>
+
+<div class="container slider-2" id="price">
 
 <?php
 //имеем на сервере массив всех цен. любое количество цен. на входе нужен только он.
@@ -49,7 +108,6 @@ $min_price = $prices[0];
 $max_price = end($prices);
 ?>
 
-<div class="container" id="prices">
 	<div class="row">
 		<div class="col-xs-12"><p>Выберите диапазон цен:</p></div>
 	</div>
@@ -99,6 +157,15 @@ $max_price = end($prices);
 		</div>
 		<div class="col-xs-4"><pre><?php print_r($prices); // вывод для отладки?></pre></div>
 		<div class="col-xs-8"><pre><?php print_r($result); // вывод для отладки?></pre></div>
+	</div>
+</div>
+
+<div class="container controls">
+	<div class="row">
+		<div class="col-xs-12">
+			<a href="#" class="filter-button filter-button-show">Показать</a>
+			<a href="#" class="filter-button filter-button-clear">Очистить</a>
+		</div>
 	</div>
 </div>
 

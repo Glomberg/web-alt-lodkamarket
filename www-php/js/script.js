@@ -66,6 +66,72 @@ $(document).ready(function(){
 		$("#slider").slider("values",1,value2);
 	});
 
+	//нажатие на элемент меню и отображение нужного раздела фильтра
+	$('.filter-page > div[id]').each(function(){
+		$(this).hide();
+	});
+	$('.filter-page ul a').on('click', function(e){
+		e.preventDefault();
+		if (!$(this).parent('li').hasClass('active')) {
+			var target = $(this).attr('href');
+			$('.filter-page ul li').removeAttr('class');
+			$(this).parent('li').addClass('active');
+			$('.filter-page > div[id]').hide();
+			$('.filter-page > div[id="'+target.substr(1)+'"]').slideDown();
+		}
+	});
+	
+	//ползунок длина лодки
+	var slider_length = $('#slider-length');
+	var min_length = parseInt(slider_length.attr('data-min-value'));
+	var max_length = parseInt(slider_length.attr('data-max-value'));
+	
+	slider_length.slider({ //запускаем ползунок
+		range: true,
+		min: min_length,
+		max: max_length,
+		values: [min_length,max_length],
+		step: 10
+	});
+	
+	//ползунок пассажиры
+	var slider_passengers = $('#slider-passengers');
+	var min_passengers = parseInt(slider_passengers.attr('data-min-value'));
+	var max_passengers = parseInt(slider_passengers.attr('data-max-value'));
+	
+	slider_passengers.slider({ //запускаем ползунок
+		range: true,
+		min: min_passengers,
+		max: max_passengers,
+		values: [min_passengers,max_passengers],
+		step: 1
+	});
+	
+	//ползунок мощность мотора
+	var slider_power = $('#slider-power');
+	var min_power = parseInt(slider_power.attr('data-min-value'));
+	var max_power = parseInt(slider_power.attr('data-max-value'));
+	
+	slider_power.slider({ //запускаем ползунок
+		range: true,
+		min: min_power,
+		max: max_power,
+		values: [min_power,max_power],
+		step: 1
+	});
+	
+	//ползунок вес
+	var slider_weigth = $('#slider-weigth');
+	var min_weigth = parseInt(slider_weigth.attr('data-min-value'));
+	var max_weigth = parseInt(slider_weigth.attr('data-max-value'));
+	
+	slider_weigth.slider({ //запускаем ползунок
+		range: true,
+		min: min_weigth,
+		max: max_weigth,
+		values: [min_weigth,max_weigth],
+		step: 1
+	});
 	
 	
 });
