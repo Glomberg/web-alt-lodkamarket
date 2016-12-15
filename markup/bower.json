@@ -1,0 +1,9 @@
+{
+  "name": "project-name",
+  "dependencies": {
+    "jquery": "^3.1.0"
+  },
+  "devDependencies": {
+    "owl-carousel": "*.*.*"
+  }
+}

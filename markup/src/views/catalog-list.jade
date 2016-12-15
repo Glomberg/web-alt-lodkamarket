@@ -1,0 +1,268 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		title title
+		
+		link(href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Open+Sans:300,400,600,700,800&subset=cyrillic,cyrillic-ext" rel="stylesheet")
+		link(rel="stylesheet", href="css/vendor.css")
+		link(rel="stylesheet", href="css/styles.css")
+	body
+	.main-background
+	.container-fluid.page-bg
+		include partials/header
+		.container.mobile-container
+			.row
+				.col-xl-20.my-breadcrumbs
+					ul.my-breadcrumbs__menu
+						li: a(href="#") Главная страница
+						li: a(href="#") Каталог
+						li Лодки
+		.container.mobile-container
+			.row
+				.col-xl-20.catalog-categories-slider__wrapper
+						.catalog-categories-slider
+							.item
+								a(href="#").catalog-categories-slider__block
+									.catalog-categories-slider__image
+										img(src="img/slide-category1.png", alt="")
+									.catalog-categories-slider__name Гребные
+							.item
+								a(href="#").catalog-categories-slider__block
+									.catalog-categories-slider__image
+										img(src="img/slide-category2.png", alt="")
+									.catalog-categories-slider__name Моторно-гребные
+							.item
+								a(href="#").catalog-categories-slider__block
+									.catalog-categories-slider__image
+										img(src="img/slide-category3.png", alt="")
+									.catalog-categories-slider__name Моторные с жестким полом
+							.item
+								a(href="#").catalog-categories-slider__block
+									.catalog-categories-slider__image
+										img(src="img/slide-category4.png", alt="")
+									.catalog-categories-slider__name Моторные с НДНД
+							.item
+								a(href="#").catalog-categories-slider__block
+									.catalog-categories-slider__image
+										img(src="img/slide-category5.png", alt="")
+									.catalog-categories-slider__name RIB
+							.item
+								a(href="#").catalog-categories-slider__block
+									.catalog-categories-slider__image
+										img(src="img/slide-category4.png", alt="")
+									.catalog-categories-slider__name Моторные с НДНД
+							.item
+								a(href="#").catalog-categories-slider__block
+									.catalog-categories-slider__image
+										img(src="img/slide-category5.png", alt="")
+									.catalog-categories-slider__name RIB
+		.container-fluid.filter
+			.container
+				.row
+					.col-xl-20
+						.main-headeline
+							.main-headeline__header Фильтр
+							.main-headeline__subheader
+								.filter__icon
+					.col-xl-20.no-padding-all
+						.tabs
+							.tabs__headers
+								.tabs__name(data-tab="tab1") Серия лодок
+								.tabs__name(data-tab="tab2") Длина лодки
+								.tabs__name(data-tab="tab3") Количество пассажиров
+								.tabs__name(data-tab="tab4") Мощность мотора / MAX
+								.tabs__name(data-tab="tab5") Вес лодки
+								.tabs__name(data-tab="tab6") Тип пола
+								.tabs__name(data-tab="tab7") Цена
+							.tabs__container
+								#tab1.tabs__item
+									form
+										input(type="checkbox" id="one" name="test").filter__checkbox
+										label(for="one") 1 сиденье
+										input(type="checkbox" id="two" name="test").filter__checkbox
+										label(for="two") 2 сиденья
+										input(type="text" placeholder="Введите параметр").filter__input
+										.filter__rangeElems
+											input(type="text" id="example_id" name="example_name" value="")
+								#tab2.tabs__item
+									input(type="checkbox" id="one" name="test").filter__checkbox
+									label(for="one") 1 сиденье
+								#tab3.tabs__item
+									input(type="checkbox" id="one" name="test").filter__checkbox
+									label(for="one") 1 сиденье	
+		.container-fluid.catalog-settings
+			.container
+				.row.flex-items-xl-middle
+					.col-xl-16
+						.catalog-settings__header Моторные лодки с жестким полом
+					.col-xl-4.catalog-settings__view
+						span Вид каталога:
+						a(href="#").catalog-settings__type.catalog-settings__type--block
+						a(href="#").catalog-settings__type.catalog-settings__type--list
+		.catalog-mobile-container
+			.container.card-row
+				.card-row__badge.card-row__badge--sale
+				.row
+					.col-xl-6
+						a(href="img/category1.png" data-lightbox="image-8").card-row__image
+						.card-row__images
+							.card-row__mini-image
+								img(src="img/category1.png", alt="")
+							.card-row__mini-image
+								img(src="img/category2.png", alt="")
+							.card-row__mini-image
+								img(src="img/category1.png", alt="")
+					.col-xl-9.no-padding-right
+						.card-row__name Гребная лодка ПВХ GLADIATOR Серия (А) Simple A220 NEW
+						.card-row__table
+							.row
+								.col-xl-10
+									.card-row__row
+										span Длинна, см
+										span 220
+									.card-row__row
+										span Ширина внешняя, см
+										span 220
+									.card-row__row
+										span Количество камер
+										span 2
+									.card-row__row
+										span Длинна, см
+										span 220
+									.card-row__row
+										span Ширина внешняя, см
+										span 220
+								.col-xl-10
+									.card-row__row
+										span Длинна, см
+										span 220
+									.card-row__row
+										span Ширина внешняя, см
+										span 220
+									.card-row__row
+										span Количество камер
+										span 2
+									.card-row__row
+										span Длинна, см
+										span 220
+									.card-row__row
+										span Ширина внешняя, см
+										span 220
+					.col-xl-5.no-padding-left
+						.card-row__price.card-row__price--sale
+							span 
+								|10 400 р.
+								.card-row__sale-price 12 500 р
+						.card-row__advantages
+							a(href="#").catalog-category__advantage.catalog-category__advantage--one.mytooltip(data-tooltip="sdfads fds fsdaf sadf sdf sdf sdaf sdf sdaf asdf sdf asd f")
+							a(href="#").catalog-category__advantage.catalog-category__advantage--two.mytooltip(data-tooltip="sdfads fds fsdaf sadf sdf sdf sdaf sdf sdaf asdf sdf asd f")
+							a(href="#").catalog-category__advantage.catalog-category__advantage--three.mytooltip(data-tooltip="sdfads fds fsdaf sadf sdf sdf sdaf sdf sdaf asdf sdf asd f")
+						.card-row__rating
+							.card-row__rating-header Рейтинг товара
+							.card__rating
+								form
+									fieldset
+										span.star-cb-group
+											input(type="radio" id="rating-5" name="rating1" value="5")
+											label(for="rating-5") 5
+											input(type="radio" id="rating-4" name="rating1" value="4")
+											label(for="rating-4") 4
+											input(type="radio" id="rating-3" name="rating1" value="3")
+											label(for="rating-3") 3
+											input(type="radio" id="rating-2" name="rating1" value="2")
+											label(for="rating-2") 2
+											input(type="radio" id="rating-1" name="rating1" value="1")
+											label(for="rating-1") 1
+											input(type="radio" id="rating-0" name="rating1" value="0").star-cb-clear
+											label(for="rating-0") 0
+						.card-row__buttons
+							.card__buttons
+								a(href="javascript:void(0);").card__compare.js-ripple
+								a(href="javascript:void(0);").card__buy.js-ripple
+			.container.card-row
+				.card-row__badge.card-row__badge--good
+				.row
+					.col-xl-6
+						.card-row__image
+						.card-row__images
+							.card-row__mini-image
+								img(src="img/category1.png", alt="")
+							.card-row__mini-image
+								img(src="img/category2.png", alt="")
+							.card-row__mini-image
+								img(src="img/category1.png", alt="")
+					.col-xl-9.no-padding-right
+						.card-row__name Гребная лодка ПВХ GLADIATOR Серия (А) Simple A220 NEW
+						.card-row__table
+							.row
+								.col-xl-10
+									.card-row__row
+										span Длинна, см
+										span 220
+									.card-row__row
+										span Ширина внешняя, см
+										span 220
+									.card-row__row
+										span Количество камер
+										span 2
+									.card-row__row
+										span Длинна, см
+										span 220
+									.card-row__row
+										span Ширина внешняя, см
+										span 220
+								.col-xl-10
+									.card-row__row
+										span Длинна, см
+										span 220
+									.card-row__row
+										span Ширина внешняя, см
+										span 220
+									.card-row__row
+										span Количество камер
+										span 2
+									.card-row__row
+										span Длинна, см
+										span 220
+									.card-row__row
+										span Ширина внешняя, см
+										span 220
+					.col-xl-5.no-padding-left
+						.card-row__price 
+							span 
+								|10 400 р.
+						.card-row__advantages
+							a(href="#").catalog-category__advantage.catalog-category__advantage--one.mytooltip(data-tooltip="sdfads fds fsdaf sadf sdf sdf sdaf sdf sdaf asdf sdf asd f")
+							a(href="#").catalog-category__advantage.catalog-category__advantage--two.mytooltip(data-tooltip="sdfads fds fsdaf sadf sdf sdf sdaf sdf sdaf asdf sdf asd f")
+							a(href="#").catalog-category__advantage.catalog-category__advantage--three.mytooltip(data-tooltip="sdfads fds fsdaf sadf sdf sdf sdaf sdf sdaf asdf sdf asd f")
+						.card-row__rating
+							.card-row__rating-header Рейтинг товара
+							.card__rating
+								form
+									fieldset
+										span.star-cb-group
+											input(type="radio" id="rating-5" name="rating1" value="5")
+											label(for="rating-5") 5
+											input(type="radio" id="rating-4" name="rating1" value="4")
+											label(for="rating-4") 4
+											input(type="radio" id="rating-3" name="rating1" value="3")
+											label(for="rating-3") 3
+											input(type="radio" id="rating-2" name="rating1" value="2")
+											label(for="rating-2") 2
+											input(type="radio" id="rating-1" name="rating1" value="1")
+											label(for="rating-1") 1
+											input(type="radio" id="rating-0" name="rating1" value="0").star-cb-clear
+											label(for="rating-0") 0
+						.card-row__buttons
+							.card__buttons
+								a(href="javascript:void(0);").card__compare.js-ripple
+								a(href="javascript:void(0);").card__buy.js-ripple
+		.more-products-container.more-products-container--row
+			a(href="#").more-products
+				.icon
+				span Смотреть больше товаров
+	include partials/footer
+	include partials/scripts

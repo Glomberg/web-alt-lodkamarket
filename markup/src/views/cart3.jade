@@ -1,0 +1,173 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		title title
+		
+		link(href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Open+Sans:300,400,600,700,800&subset=cyrillic,cyrillic-ext" rel="stylesheet")
+		link(rel="stylesheet", href="css/vendor.css")
+		link(rel="stylesheet", href="css/styles.css")
+	body
+	.main-background
+	.container-fluid.page-bg
+		include partials/header
+		.container.mobile-container
+			.row
+				.col-xl-20.my-breadcrumbs
+					ul.my-breadcrumbs__menu
+						li: a(href="#") Главная страница
+						li: a(href="#") Каталог
+						li Лодки
+		.container
+			.cart-header
+				a(href="#").cart-header__link Корзина
+				a(href="#").cart-header__link Доставка и оплата
+				a(href="#").cart-header__link.active Подтверждение
+			.cart-table
+				.cart-table__row
+					.cart-table__col-1.cart-table__col--header
+						| Порядковый номер
+					.cart-table__col-2.cart-table__col--header
+						| Вид
+					.cart-table__col-3.cart-table__col--header
+						| Наименование
+					.cart-table__col-4.cart-table__col--header
+						| Общие характеристики
+					.cart-table__col-5.cart-table__col--header
+						| Количество
+					.cart-table__col-6.cart-table__col--header
+						| Цена
+					.cart-table__col-7.cart-table__col--header
+						| Цена со скидкой
+				.cart-table__row
+					.cart-table__col-1(data-col="Порядковый номер")
+						.cart-table__content 1
+					.cart-table__col-2(data-col="Вид")
+						.cart-table__content
+							a(href="#")
+								img(src="img/category-image.png", alt="")
+					.cart-table__col-3(data-col="Наименование")
+						.cart-table__content
+							a(href="#") Гребная Лодка ПВХ GLADIATOR Серия (А) Simple A220 New
+					.cart-table__col-4(data-col="Общие характеристики")
+						.cart-table__content
+							| Длинна: 20м
+							br
+							| Ширина: 4м
+							br
+							| Цвет: красный
+							br
+							| Тип пола: жесткий
+					.cart-table__col-5(data-col="Количество")
+						.cart-table__content 1
+					.cart-table__col-6(data-col="Цена")
+						.cart-table__content 10 800 р
+					.cart-table__col-7(data-col="Цена со скидкой")
+						.cart-table__content 10 200 р
+				.cart-table__row
+					.cart-table__col-1(data-col="Порядковый номер")
+						.cart-table__content 1
+					.cart-table__col-2(data-col="Вид")
+						.cart-table__content
+							a(href="#")
+								img(src="img/category-image.png", alt="")
+					.cart-table__col-3(data-col="Наименование")
+						.cart-table__content
+							a(href="#") Гребная Лодка ПВХ GLADIATOR Серия (А) Simple A220 New
+					.cart-table__col-4(data-col="Общие характеристики")
+						.cart-table__content
+							| Длинна: 20м
+							br
+							| Ширина: 4м
+							br
+							| Цвет: красный
+							br
+							| Тип пола: жесткий
+					.cart-table__col-5(data-col="Количество")
+						.cart-table__content 1
+					.cart-table__col-6(data-col="Цена")
+						.cart-table__content 10 800 р
+					.cart-table__col-7(data-col="Цена со скидкой")
+						.cart-table__content 10 200 р
+		.container.cart-info
+			.row
+				.col-xl-15
+					.cart-info__wrapper
+						.cart-info__newblock
+							.cart-info__delivery
+								.cart-info__delivery-header Доставка курьером
+								.order-type__icon.order-type__icon--courier
+								.cart-info__delivery-description
+									span Стоимость доставки
+									|  зависит от региона и веса заказа, для согласования цены с Вами свяжется наш менеджер
+								a(href="#").cart-info__edit
+									.cart-info__edit-triangle
+						.cart-info__newblock
+							.cart-info__pay
+								.cart-info__pay-header Через яндекс кассу
+								.pay-types__icon.pay-types__icon--two
+								a(href="#").cart-info__edit
+									.cart-info__edit-triangle
+						.cart-info__newblock
+							.cart-info__user-info
+								a(href="#").cart-info__edit
+									.cart-info__edit-triangle
+								.cart-info__username Давыдов Семен Варламович
+								.cart-info__main-block
+									.cart-info__block
+										span Название компании:
+										|  ООО "ВЕТЕРПАРУС"
+									.cart-info__block
+										span Адрес доставки:
+										|  ул. Комсомольская 15 кв. 6
+									.cart-info__block
+										span Email:
+										|  davidov@ya.ru
+									.cart-info__block
+										span Дата рождения:
+										|  14.10.1979
+									.cart-info__block
+										span Телефон:
+										|  +7 (914) 152-96-85
+									.cart-info__block
+										span Почтовый индекс:
+										|  8547858
+									.cart-info__block
+										span Паспорт:
+										|  7895 965896
+									.cart-info__block
+										span ИНН:
+										|  0383735463
+									.cart-info__block
+										span КПП:
+										|  9398837464
+
+					.cart-info__main-info
+						.cart-info__main-header Важная информация
+						.cart-info__text
+							|Ваш заказ будет отправлен на обработку менеджеру-магазина.Он проверит выбранные позиции на наличие на складе и свяжется по указанному телефону для подтверждения заказа. Мы гарантируем обработку заказа в течение 30 минут с момента поступления в
+							span рабочие дни с Понедельника по Пятницу с 11:00 до 20:00 (по Хабаровску).
+							br
+							br
+							|После подтверждения заказа в Вашем личном кабинете в зависимости от выбранного способа оплаты появится счет или ссылка на оплату (автоматически дублируются на указанную при регистрации электронную почту). Единственное, что вам остается – произвести расчет. Получив оплату, мы передаем ваш заказ в транспортную компанию для доставки. Вы же получите трекер для отслеживания перемещения груза.
+							br
+							br
+							| Сотрудники Транспортной компании уведомят вас о прибытии груза по телефона и согласуют удобное время доставки. Обязательно проверьте состав заказа и внешний вид товара.
+							br
+							br
+							span Спасибо что доверяете бренду GLADIATOR.
+				.col-xl-5
+					.cart-info__sale-block
+						.cart-info__sale-text Ваша скидка:
+						.cart-info__sale-price 1 200 р
+					.cart-info__price-block
+						.cart-info__price-text Итого:
+						.cart-info__price 20 400 р
+					a(href="#").cart-info__order
+						span Сформировать
+						.icon
+
+	include partials/footer
+	include partials/scripts

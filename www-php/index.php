@@ -29,7 +29,7 @@
 				<li><a href="#length"><span>Длина лодки</span></a></li>
 				<li><a href="#passengers"><span>Количество пассажиров</span></a></li>
 				<li><a href="#power"><span>Мощность мотора / MAX</span></a></li>
-				<li><a href="#weight"><span>Вес лодки</span></a></li>
+				<li><a href="#weigth"><span>Вес лодки</span></a></li>
 				<li><a href="#floor"><span>Тип пола</span></a></li>
 				<li><a href="#price"><span>Цена</span></a></li>
 			</ul>
@@ -39,7 +39,11 @@
 
 <div class="container checboxes" id="series">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-12"><p>Серия лодок:</p></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
 			<input type="checkbox" name="" id="series-chbx1"><label for="series-chbx1">Клапан исбыточного давления</label>
 			<input type="checkbox" name="" id="series-chbx2"><label for="series-chbx2">Носовой тент</label>
 			<input type="checkbox" name="" id="series-chbx3"><label for="series-chbx3">Носовая сумка</label>
@@ -48,49 +52,91 @@
 			<input type="checkbox" name="" id="series-chbx6"><label for="series-chbx6">Клапан исбыточного давления</label>
 			<input type="checkbox" name="" id="series-chbx7"><label for="series-chbx7">Бронированный балон</label>
 		</div>
+		<div class="col-xs-1"></div>
 	</div>
 </div>
 
 <div class="container slider-1" id="length">
 	<div class="row">
-		<div class="col-xs-12">
-			<div id="slider-length" data-min-value="100" data-max-value="800"></div>
+		<div class="col-xs-12"><p>Выберите длину лодки, см:</p></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
+			<div class="slider-wrapper">
+				<div id="slider_length" data-values="320,350,360,380,420,425"></div>
+				<input type="hidden" name="min_value" value="" />
+				<input type="hidden" name="max_value" value="" />
+			</div>
 		</div>
+		<div class="col-xs-1"></div>
 	</div>
 </div>
 
 <div class="container slider-1" id="passengers">
 	<div class="row">
-		<div class="col-xs-12">
-			<div id="slider-passengers" data-min-value="1" data-max-value="10"></div>
+		<div class="col-xs-12"><p>Выберите число пассажиров:</p></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
+			<div class="slider-wrapper">
+				<div id="slider_passengers" data-values="4,5,16"></div>
+				<input type="hidden" name="min_value" value="" />
+				<input type="hidden" name="max_value" value="" />
+			</div>
 		</div>
+		<div class="col-xs-1"></div>
 	</div>
 </div>
 
 <div class="container slider-1" id="power">
 	<div class="row">
-		<div class="col-xs-12">
-			<div id="slider-power" data-min-value="5" data-max-value="120"></div>
+		<div class="col-xs-12"><p>Выберите максимальную мощность двигателя:</p></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
+			<div class="slider-wrapper">
+				<div id="slider_power" data-values="4,5,16"></div>
+				<input type="hidden" name="min_value" value="" />
+				<input type="hidden" name="max_value" value="" />
+			</div>
 		</div>
+		<div class="col-xs-1"></div>
 	</div>
 </div>
 
-<div class="container slider-1" id="weight">
+<div class="container slider-1" id="weigth">
 	<div class="row">
-		<div class="col-xs-12">
-			<div id="slider-weigth" data-min-value="10" data-max-value="300"></div>
+		<div class="col-xs-12"><p>Выберите вес:</p></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
+			<div class="slider-wrapper">
+				<div id="slider_weigth" data-values="4,5,16,1050"></div>
+				<input type="hidden" name="min_value" value="" />
+				<input type="hidden" name="max_value" value="" />
+			</div>
 		</div>
+		<div class="col-xs-1"></div>
 	</div>
 </div>
 
 <div class="container checboxes" id="floor">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-12"><p>Выберите тип пола:</p></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
 			<input type="checkbox" name="" id="floor-chbx1"><label for="floor-chbx1">Тип 1</label>
 			<input type="checkbox" name="" id="floor-chbx2"><label for="floor-chbx2">Тип 2</label>
 			<input type="checkbox" name="" id="floor-chbx3"><label for="floor-chbx3">Тип 3</label>
 			<input type="checkbox" name="" id="floor-chbx4"><label for="floor-chbx4">Тип 4</label>
 		</div>
+		<div class="col-xs-1"></div>
 	</div>
 </div>
 
@@ -102,7 +148,7 @@ $prices = array(28126, 42321, 86601, 90162, 21839, 99160, 83028, 62925, 42611, 1
 
 sort($prices);//упорядочим по возрастанию
 
-$result = array();
+$result = array(); // это для отладки
 $range = 0;
 $min_price = $prices[0];
 $max_price = end($prices);
@@ -139,7 +185,7 @@ $max_price = end($prices);
 					?>
 				</div>
 				<div class="slider-bg">
-					<div id="slider" data-min-value="<?php echo $min_price; ?>" data-max-value="<?php echo $max_price; ?>"></div>
+					<div id="slider_price" data-min-value="<?php echo $min_price; ?>" data-max-value="<?php echo $max_price; ?>"></div>
 				</div>
 			</div>
 		</div>

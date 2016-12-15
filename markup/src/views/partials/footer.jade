@@ -1,0 +1,190 @@
+.container-fluid.footer-headings
+		.container
+			.row.flex-items-xl-bottom.flex-items-lg-bottom.flex-items-sm-bottom
+				.col-xl-3.offset-xl-1.col-lg-3.offset-lg-1.col-sm-5.hidden-xs-down
+					.footer-headings__element О компании
+				.col-xl-3.offset-xl-1.col-lg-3.offset-lg-1.col-sm-4.hidden-xs-down
+					.footer-headings__element Полезное
+				.col-xl-3.offset-xl-1.col-lg-3.offset-lg-1.col-sm-4.hidden-xs-down
+					.footer-headings__element Каталог
+				.col-xl-3.offset-xl-1.col-lg-3.offset-lg-1.col-sm-4.hidden-xs-down
+					.footer-headings__element Заказ
+				.col-xl-3.offset-xl-1.col-lg-3.offset-lg-1.col-sm-3
+					.social-block
+						a(href="#").social-block__link
+							img(src="img/facebook-icon.png", alt="")
+						a(href="#").social-block__link
+							img(src="img/vk-icon.png", alt="")
+						a(href="#").social-block__link
+							img(src="img/twitter-icon.png", alt="")
+	.container-fluid.footer-links
+		.container
+			.row
+				.col-xl-3.offset-xl-1.col-lg-3.offset-lg-1.col-sm-5.col-xs-10
+					ul.footer-links__list
+						li: a(href="#") Новости
+						li: a(href="#") Акции
+						li: a(href="#") История компании
+						li: a(href="#") Контакты
+				.col-xl-3.offset-xl-1.col-lg-3.offset-lg-1.col-sm-4.col-xs-10
+					ul.footer-links__list
+						li: a(href="#") Статьи
+						li: a(href="#") Фотогалерея
+						li: a(href="#") Форум
+						li: a(href="#") Оферта
+				.col-xl-3.offset-xl-1.col-lg-3.offset-lg-1.col-sm-4.col-xs-10
+					ul.footer-links__list
+						li: a(href="#") Лодки
+						li: a(href="#") Моторы
+						li: a(href="#") Аксессуары
+						li: a(href="#") SUP board
+				.col-xl-3.offset-xl-1.col-lg-3.offset-lg-1.col-sm-4.col-xs-10
+					ul.footer-links__list
+						li: a(href="#") Как купить?
+						li: a(href="#") Доставка
+						li: a(href="#") Оплата
+						li: a(href="#") Гарантия и сервис
+				.col-xl-3.offset-xl-1.col-lg-4.col-sm-20
+					.footer-links__order-wrap
+						a(href="#").header-main__order-call.js-ripple
+							.icon
+							span Обратная связь
+	.container-fluid.footer-office
+		.container
+			.row
+				.col-xl-7.offset-xl-1.col-lg-5.offset-lg-1.col-sm-12
+					.footer-office__description
+						span ООО "БС-марин"
+						|  2013-2016
+						br
+						|Официальный дистрибьютор марки "GLADIATOR" в России
+				.col-xl-3.offset-xl-1.col-lg-4.offset-lg-1.col-sm-8
+					.footer-office__block
+						.footer-office__icon.footer-office__icon--central
+						.footer-office__header Центральный офис:
+						|г. Хабаровск
+						br
+						|ул. Казбекская, 28
+				.col-xl-3.offset-xl-1.col-lg-4.offset-lg-1.col-sm-9.offset-sm-1
+					.footer-office__block
+						.footer-office__icon.footer-office__icon--time
+						.footer-office__header Режим работы:
+						|Пн-Пт, с 10.00 до 20.00
+				.col-xl-3.offset-xl-1.col-lg-4.col-sm-7.offset-sm-1
+					.footer-office__phone 
+						.footer-office__phone-icon
+						|тел. 8 800 000 0000
+	.container-fluid.footer-storage-heading
+		.container
+			.row
+				.col-xl-19.offset-xl-1
+					.footer-storage-heading__header Склад-партнеры по России
+	.container-fluid.footer-partners
+		.container
+			.row
+				.col-xl-3.offset-xl-1.col-lg-4.offset-lg-1
+					.footer-partners__partner
+						.footer-partners__adress г. Санкт-Петербург, ул. 1-й Верхний проезд, 12, лит Б
+				.col-xl-3.offset-xl-1.col-lg-4.offset-lg-1
+					.footer-partners__partner
+						.footer-partners__adress г. Котельники Московская область Дзержинское шоссе, 14
+				.col-xl-3.offset-xl-1.col-lg-4.offset-lg-1
+					.footer-partners__partner
+						.footer-partners__adress г. Екатеринбург, проезд Горнистов, 1Б
+				.col-xl-3.offset-xl-1.col-lg-4.offset-lg-1
+					.footer-partners__partner
+						.footer-partners__adress г. Хабаровск, ул. Целинная
+	.container-fluid.footer-logos
+		.container
+			.row
+				.col-xl-19.offset-xl-1
+					.footer-logos__wrapper
+						a(href="#")
+							img(src="img/logo.png", alt="" style="width: 160px;")
+						a(href="#")
+							img(src="img/web-alt-logo.png", alt="")
+	.container-fluid.footer-fixed.hidden-xs-down
+		.container
+			.row.flex-items-xl-middle.flex-items-lg-middle.flex-items-sm-middle
+				.col-xl-15.col-sm-15
+					ul.footer-fixed__menu
+						li: a(href="#") Гарантия и сервис
+						li: a(href="#") Как купить
+						li: a(href="#") Бесплатная доставка
+				.col-xl-5.text-right.col-sm-5
+					a(href="#").top-header__city Хабаровск
+	.remodal(data-remodal-id="authentification").modal-auth
+		.modal-auth__portrait
+		.modal-auth__header Вход в личный кабинет
+		input(type="text" placeholder="Логин").input-field
+		input(type="text" placeholder="Пароль").input-field.input-field--warning
+		button(type="submit").modal-auth__login.js-ripple Войти
+		.modal-personal__error
+			span Ошибка в заполнении:
+			|  пароль должен быть более 5ти символов
+		.modal-auth__wrapper
+			a(href="#") Регистрация
+			a(href="#") Забыли пароль
+	.remodal(data-remodal-id="personal-edit").modal-personal
+		.modal-auth__portrait
+		.modal-auth__header Редактирование данных
+		.input-field__required
+			input(type="text" placeholder="ФИО").input-field.input-field--white
+		.input-field__required
+			input(type="text" placeholder="Телефон").input-field.input-field--white
+		input(type="text" placeholder="Адрес доставки").input-field.input-field--white
+		.modal-personal__error
+			span Ошибка в заполнении:
+			|  пароль должен быть более 5ти символов
+		.modal-auth__wrapper
+			a(href="#").modal-personal__save.js-ripple Сохранить данные
+			a(href="#") Забыли пароль?
+	.remodal(data-remodal-id="registration").modal-personal
+		.modal-auth__portrait
+		.modal-auth__header Регистрация
+		.input-field__required
+			input(type="text" placeholder="Email").input-field.input-field--white
+		.input-fieldbox
+			input(type="checkbox" id="23" name="21").filter__checkbox
+			label(for="23") Подписаться на новости
+		.input-field__required
+			input(type="text" placeholder="ФИО").input-field.input-field--white
+		.input-field__required
+			input(type="text" placeholder="Телефон").input-field.input-field--white
+		input(type="text" placeholder="Пароль").input-field.input-field--white.input-field--warning
+		input(type="text" placeholder="Повторите пароль").input-field.input-field--white
+		.modal-personal__error
+			span Ошибка в заполнении:
+			|  пароль должен быть более 5ти символов
+		.modal-auth__wrapper
+			a(href="#").modal-personal__save.js-ripple Зарегистрироваться
+			a(href="#").modal-personal__save.modal-personal__login.js-ripple Войти
+	.remodal(data-remodal-id="city").modal-city
+		input(type="text" placeholder="Введите название города").input-field
+		.modal-city__cities
+			a(href="#").modal-city__city Новосибирск
+			a(href="#").modal-city__city Владивосток
+			a(href="#").modal-city__city Новосибирск
+			a(href="#").modal-city__city Омск
+			a(href="#").modal-city__city Иркутск
+			a(href="#").modal-city__city Омск
+			a(href="#").modal-city__city Барнаул
+			a(href="#").modal-city__city Кемерово
+			a(href="#").modal-city__city Барнаул
+			a(href="#").modal-city__city Кемерово
+	.remodal(data-remodal-id="feedback").modal-personal
+		.modal-auth__portrait.modal-auth__portrait--mail
+		.modal-auth__header Обратная связь
+		.input-field__required
+			input(type="text" placeholder="Имя").input-field.input-field--white
+		.input-field__required
+			input(type="text" placeholder="Телефон").input-field.input-field--white
+		.input-field__required
+			input(type="text" placeholder="Email").input-field.input-field--white
+		.input-field__required
+			textarea(placeholder="Ваше сообщение" rows="7").input-field.input-field--white.input-field--message
+		.modal-personal__error
+			span Ошибка в заполнении:
+			|  пароль должен быть более 5ти символов
+		.modal-auth__wrapper.modal-auth__wrapper--center
+			a(href="#").modal-personal__save.js-ripple Отправить

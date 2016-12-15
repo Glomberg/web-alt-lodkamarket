@@ -1,0 +1,213 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+		title title
+		
+		link(href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Open+Sans:300,400,600,700,800&subset=cyrillic,cyrillic-ext" rel="stylesheet")
+		link(rel="stylesheet", href="css/vendor.css")
+		link(rel="stylesheet", href="css/styles.css")
+	body
+	.main-background
+	.container-fluid.page-bg
+		include partials/header
+		.container.mobile-container
+			.row
+				.col-xl-20.my-breadcrumbs
+					ul.my-breadcrumbs__menu
+						li: a(href="#") Главная страница
+						li: a(href="#") Каталог
+						li Лодки
+		.container.personal
+			.row
+				.col-xl-5.no-padding-right
+					.personal__image.personal__image--default
+						form.personal__loadimage
+							label(for="file")
+								span.personal__load-btn Загрузить изображение
+								input(type="file" id="file" name="file")
+					.personal__name Давыдов Семен Варламович
+					.personal__data
+						.personal__data-info
+							span Адрес доставки:
+							br
+							|  ул. Комсомольская 15, кв. 6
+						.personal__data-info
+							span E-mail:
+							|  davidov@ya.ru
+						.personal__data-info
+							span Телефон:
+							|  +7 (914) 152-96-85
+					.personal__edit-wrap
+						a(href="#personal-edit").personal__edit Редактировать данные
+				.col-xl-14.offset-xl-1
+					.personal-header
+						ul
+							li.active: a(href="#") Мои заказы
+							li
+								a(href="#") 
+									|Уведомления
+									.personal-header__count +99
+						form
+							input(type="text" placeholder="Введите номер накладной").personal-header__search
+							input(type="submit").personal-header__search--btn
+					.personal-orders
+						.personal-orders__header
+							a(href="#").active Активные
+							a(href="#") Закрытые
+						.personal-orders__order
+							.personal-orders__top
+								.personal-orders__left
+									.personal-orders__number №: 3498755
+									.personal-orders__date от 10.05.2016
+									.personal-orders__status
+										| Статус:
+										span  Ожидает оплаты
+								a(href="#").personal-orders__button.active оплатить
+							.personal-orders__table
+								.cart-table
+									.cart-table__row
+										.cart-table__col-1.cart-table__col--header
+											| Порядковый номер
+										.cart-table__col-2.cart-table__col--header
+											| Вид
+										.cart-table__col-3.cart-table__col--header
+											| Наименование
+										.cart-table__col-4.cart-table__col--header
+											| Общие характеристики
+										.cart-table__col-5.cart-table__col--header
+											| Количество
+										.cart-table__col-6.cart-table__col--header
+											| Цена
+										.cart-table__col-7.cart-table__col--header
+											| Цена со скидкой
+									.cart-table__row
+										.cart-table__col-1(data-col="Порядковый номер")
+											.cart-table__content 1
+										.cart-table__col-2(data-col="Вид")
+											.cart-table__content
+												a(href="#")
+													img(src="img/category-image.png", alt="")
+										.cart-table__col-3(data-col="Наименование")
+											.cart-table__content 
+												a(href="#") Гребная Лодка ПВХ GLADIATOR Серия (А) Simple A220 New
+										.cart-table__col-4(data-col="Общие характеристики")
+											.cart-table__content
+												| Длинна: 20м
+												br
+												| Ширина: 4м
+												br
+												| Цвет: красный
+												br
+												| Тип пола: жесткий
+										.cart-table__col-5(data-col="Количество")
+											.cart-table__content 1
+										.cart-table__col-6(data-col="Цена")
+											.cart-table__content 10 800 р
+										.cart-table__col-7(data-col="Цена со скидкой")
+											.cart-table__content 10 200 р
+									.cart-table__row
+										.cart-table__col-1(data-col="Порядковый номер")
+											.cart-table__content 1
+										.cart-table__col-2(data-col="Вид")
+											.cart-table__content
+												a(href="#")
+													img(src="img/category-image.png", alt="")
+										.cart-table__col-3(data-col="Наименование")
+											.cart-table__content 
+												a(href="#") Гребная Лодка ПВХ GLADIATOR Серия (А) Simple A220 New
+										.cart-table__col-4(data-col="Общие характеристики")
+											.cart-table__content
+												| Длинна: 20м
+												br
+												| Ширина: 4м
+												br
+												| Цвет: красный
+												br
+												| Тип пола: жесткий
+										.cart-table__col-5(data-col="Количество")
+											.cart-table__content 1
+										.cart-table__col-6(data-col="Цена")
+											.cart-table__content 10 800 р
+										.cart-table__col-7(data-col="Цена со скидкой")
+											.cart-table__content 10 200 р
+						.personal-orders__order
+							.personal-orders__top
+								.personal-orders__left
+									.personal-orders__number №: 3498755
+									.personal-orders__date от 10.05.2016
+									.personal-orders__status
+										| Статус:
+										span  Ожидает оплаты
+								a(href="#").personal-orders__button оплатить
+							.personal-orders__table
+								.cart-table
+									.cart-table__row
+										.cart-table__col-1.cart-table__col--header
+											| Порядковый номер
+										.cart-table__col-2.cart-table__col--header
+											| Вид
+										.cart-table__col-3.cart-table__col--header
+											| Наименование
+										.cart-table__col-4.cart-table__col--header
+											| Общие характеристики
+										.cart-table__col-5.cart-table__col--header
+											| Количество
+										.cart-table__col-6.cart-table__col--header
+											| Цена
+										.cart-table__col-7.cart-table__col--header
+											| Цена со скидкой
+									.cart-table__row
+										.cart-table__col-1
+											| 1
+										.cart-table__col-2
+											a(href="#")
+												img(src="img/category-image.png", alt="")
+										.cart-table__col-3
+											a(href="#") Гребная Лодка ПВХ GLADIATOR Серия (А) Simple A220 New
+										.cart-table__col-4
+											| Длинна: 20м
+											br
+											| Ширина: 4м
+											br
+											| Цвет: красный
+											br
+											| Тип пола: жесткий
+										.cart-table__col-5
+											|1
+										.cart-table__col-6
+											| 10 800 р
+										.cart-table__col-7
+											| 10 200 р
+									.cart-table__row
+										.cart-table__col-1
+											| 1
+										.cart-table__col-2
+											a(href="#")
+												img(src="img/category-image.png", alt="")
+										.cart-table__col-3
+											a(href="#") Гребная Лодка ПВХ GLADIATOR Серия (А) Simple A220 New
+										.cart-table__col-4
+											| Длинна: 20м
+											br
+											| Ширина: 4м
+											br
+											| Цвет: красный
+											br
+											| Тип пола: жесткий
+										.cart-table__col-5
+											|1
+										.cart-table__col-6
+											| 10 800 р
+										.cart-table__col-7
+											| 10 200 р
+					ul.personal-pagination
+						li: a(href="#").personal-pagination__left
+						li: a(href="#").active 1
+						li: a(href="#") 2
+						li: a(href="#") 3
+						li: a(href="#").personal-pagination__right
+	include partials/footer
+	include partials/scripts

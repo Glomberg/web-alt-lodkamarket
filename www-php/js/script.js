@@ -12,7 +12,7 @@ $(document).ready(function(){
 	}
 		
 	//ползунок
-	var slider_element = $('#slider'); //div в котором формируется ползунок
+	var slider_element = $('#slider_price'); //div в котором формируется ползунок
 	var min_value = parseInt(slider_element.attr('data-min-value')); //считываем атрибут для минимального значения
 	var max_value = parseInt(slider_element.attr('data-max-value')); //считываем атрибут для максимального значения
 	
@@ -22,22 +22,22 @@ $(document).ready(function(){
 		values: [min_value,max_value],
 		range: true,
 		create: function(event, ui) {
-			$("input#minCost").val($("#slider").slider("values",0));
-			$("input#maxCost").val($("#slider").slider("values",1));
-			$('.ui-slider-handle:first').attr('data-current-value',$("#slider").slider("values",0));
-			$('.ui-slider-handle:last').attr('data-current-value',$("#slider").slider("values",1));
+			$("input#minCost").val($("#slider_price").slider("values",0));
+			$("input#maxCost").val($("#slider_price").slider("values",1));
+			$('.ui-slider-handle:first').attr('data-current-value',$("#slider_price").slider("values",0));
+			$('.ui-slider-handle:last').attr('data-current-value',$("#slider_price").slider("values",1));
 		},
 		stop: function(event, ui) {
-			$("input#minCost").val($("#slider").slider("values",0));
-			$('.ui-slider-handle:first').attr('data-current-value',$("#slider").slider("values",0));
-			$("input#maxCost").val($("#slider").slider("values",1));
-			$('.ui-slider-handle:last').attr('data-current-value',$("#slider").slider("values",1));
+			$("input#minCost").val($("#slider_price").slider("values",0));
+			$('.ui-slider-handle:first').attr('data-current-value',$("#slider_price").slider("values",0));
+			$("input#maxCost").val($("#slider_price").slider("values",1));
+			$('.ui-slider-handle:last').attr('data-current-value',$("#slider_price").slider("values",1));
 		},
 		slide: function(event, ui){
-			$("input#minCost").val($("#slider").slider("values",0));
-			$('.ui-slider-handle:first').attr('data-current-value',$("#slider").slider("values",0));
-			$("input#maxCost").val($("#slider").slider("values",1));
-			$('.ui-slider-handle:last').attr('data-current-value',$("#slider").slider("values",1));
+			$("input#minCost").val($("#slider_price").slider("values",0));
+			$('.ui-slider-handle:first').attr('data-current-value',$("#slider_price").slider("values",0));
+			$("input#maxCost").val($("#slider_price").slider("values",1));
+			$('.ui-slider-handle:last').attr('data-current-value',$("#slider_price").slider("values",1));
 		}
 	});
 	
@@ -49,7 +49,7 @@ $(document).ready(function(){
 			value1 = value2;
 			$("input#minCost").val(value1);
 		}
-		$("#slider").slider("values",0,value1);	
+		$("#slider_price").slider("values",0,value1);	
 	});
 
 		
@@ -63,7 +63,7 @@ $(document).ready(function(){
 			value2 = value1;
 			$("input#maxCost").val(value2);
 		}
-		$("#slider").slider("values",1,value2);
+		$("#slider_price").slider("values",1,value2);
 	});
 
 	//нажатие на элемент меню и отображение нужного раздела фильтра
@@ -81,56 +81,47 @@ $(document).ready(function(){
 		}
 	});
 	
-	//ползунок длина лодки
-	var slider_length = $('#slider-length');
-	var min_length = parseInt(slider_length.attr('data-min-value'));
-	var max_length = parseInt(slider_length.attr('data-max-value'));
-	
-	slider_length.slider({ //запускаем ползунок
-		range: true,
-		min: min_length,
-		max: max_length,
-		values: [min_length,max_length],
-		step: 10
-	});
-	
-	//ползунок пассажиры
-	var slider_passengers = $('#slider-passengers');
-	var min_passengers = parseInt(slider_passengers.attr('data-min-value'));
-	var max_passengers = parseInt(slider_passengers.attr('data-max-value'));
-	
-	slider_passengers.slider({ //запускаем ползунок
-		range: true,
-		min: min_passengers,
-		max: max_passengers,
-		values: [min_passengers,max_passengers],
-		step: 1
-	});
-	
-	//ползунок мощность мотора
-	var slider_power = $('#slider-power');
-	var min_power = parseInt(slider_power.attr('data-min-value'));
-	var max_power = parseInt(slider_power.attr('data-max-value'));
-	
-	slider_power.slider({ //запускаем ползунок
-		range: true,
-		min: min_power,
-		max: max_power,
-		values: [min_power,max_power],
-		step: 1
-	});
-	
-	//ползунок вес
-	var slider_weigth = $('#slider-weigth');
-	var min_weigth = parseInt(slider_weigth.attr('data-min-value'));
-	var max_weigth = parseInt(slider_weigth.attr('data-max-value'));
-	
-	slider_weigth.slider({ //запускаем ползунок
-		range: true,
-		min: min_weigth,
-		max: max_weigth,
-		values: [min_weigth,max_weigth],
-		step: 1
+	//ползунок длина лодки и подобные
+	$('.slider-1').each(function(){
+		var slider_1 = $('#slider_' + $(this).attr('id'));
+		var true_values_sting = slider_1.attr('data-values');
+		var true_values = true_values_sting.split(',');
+		var values = [];
+		for (var y=0; y<true_values.length; y++) {
+			true_values[y] = parseInt(true_values[y]);
+			values[y] = y + 1;
+		}
+		
+		slider_1.slider({ //запускаем ползунок
+			range: true,
+			min: values[0],
+			max: values[values.length - 1],
+			values: [values[0],values[values.length - 1]],
+			step: 1,
+			animate: true,
+			create: function(event, ui) {
+				slider_1.append('<div class="scale"></div>');
+				for (var z=0; z<true_values.length; z++) {
+					slider_1.children('.scale').append('<div style="left:'+ 100/(true_values.length-1)*z +'%;"><span>'+ true_values[z] +'<span></div>');
+				}
+				var current_min = true_values[slider_1.slider("values",0)-1];
+				var current_max = true_values[slider_1.slider("values",1)-1];
+				slider_1.siblings('input[name="min_value"]').val(current_min);
+				slider_1.siblings('input[name="max_value"]').val(current_max);
+			},
+			stop: function(event, ui) {
+				var current_min = true_values[slider_1.slider("values",0)-1];
+				var current_max = true_values[slider_1.slider("values",1)-1];
+				slider_1.siblings('input[name="min_value"]').val(current_min);
+				slider_1.siblings('input[name="max_value"]').val(current_max);
+			},
+			slide: function(event, ui){
+				var current_min = true_values[slider_1.slider("values",0)-1];
+				var current_max = true_values[slider_1.slider("values",1)-1];
+				slider_1.siblings('input[name="min_value"]').val(current_min);
+				slider_1.siblings('input[name="max_value"]').val(current_max);
+			}
+		});
 	});
 	
 	
