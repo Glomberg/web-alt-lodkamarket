@@ -4,10 +4,9 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width">
 	<title>Range slider with Histogram</title>
-	<link rel="stylesheet" type="text/css" href="css/css-reset.css" />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-grid-3.3.1.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/styles.css" />
-	<link rel="stylesheet" type="text/css" href="css/media.css" />
+	<link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles-prod.css">
+	<link rel="stylesheet" href="css/styles.css">
 	
 	<!--[if lt IE 9]>
 	   <script>
@@ -23,7 +22,7 @@
 <body class="filter-page">
 <nav class="container">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-20">
 			<ul>
 				<li><a href="#series"><span>Серия лодок</span></a></li>
 				<li><a href="#length"><span>Длина лодки</span></a></li>
@@ -39,11 +38,11 @@
 
 <div class="container checboxes" id="series">
 	<div class="row">
-		<div class="col-xs-12"><p>Серия лодок:</p></div>
+		<div class="col-xs-20"><p>Серия лодок:</p></div>
 	</div>
 	<div class="row">
-		<div class="col-xs-1"></div>
-		<div class="col-xs-10">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-16">
 			<input type="checkbox" name="" id="series-chbx1"><label for="series-chbx1">Клапан исбыточного давления</label>
 			<input type="checkbox" name="" id="series-chbx2"><label for="series-chbx2">Носовой тент</label>
 			<input type="checkbox" name="" id="series-chbx3"><label for="series-chbx3">Носовая сумка</label>
@@ -52,91 +51,91 @@
 			<input type="checkbox" name="" id="series-chbx6"><label for="series-chbx6">Клапан исбыточного давления</label>
 			<input type="checkbox" name="" id="series-chbx7"><label for="series-chbx7">Бронированный балон</label>
 		</div>
-		<div class="col-xs-1"></div>
+		<div class="col-xs-2"></div>
 	</div>
 </div>
 
 <div class="container slider-1" id="length">
 	<div class="row">
-		<div class="col-xs-12"><p>Выберите длину лодки, см:</p></div>
+		<div class="col-xs-20"><p>Выберите длину лодки, см:</p></div>
 	</div>
 	<div class="row">
-		<div class="col-xs-1"></div>
-		<div class="col-xs-10">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-16">
 			<div class="slider-wrapper">
 				<div id="slider_length" data-values="320,350,360,380,420,425"></div>
 				<input type="hidden" name="min_value" value="" />
 				<input type="hidden" name="max_value" value="" />
 			</div>
 		</div>
-		<div class="col-xs-1"></div>
+		<div class="col-xs-2"></div>
 	</div>
 </div>
 
 <div class="container slider-1" id="passengers">
 	<div class="row">
-		<div class="col-xs-12"><p>Выберите число пассажиров:</p></div>
+		<div class="col-xs-20"><p>Выберите число пассажиров:</p></div>
 	</div>
 	<div class="row">
-		<div class="col-xs-1"></div>
-		<div class="col-xs-10">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-16">
 			<div class="slider-wrapper">
 				<div id="slider_passengers" data-values="4,5,16"></div>
 				<input type="hidden" name="min_value" value="" />
 				<input type="hidden" name="max_value" value="" />
 			</div>
 		</div>
-		<div class="col-xs-1"></div>
+		<div class="col-xs-2"></div>
 	</div>
 </div>
 
 <div class="container slider-1" id="power">
 	<div class="row">
-		<div class="col-xs-12"><p>Выберите максимальную мощность двигателя:</p></div>
+		<div class="col-xs-20"><p>Выберите максимальную мощность двигателя:</p></div>
 	</div>
 	<div class="row">
-		<div class="col-xs-1"></div>
-		<div class="col-xs-10">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-16">
 			<div class="slider-wrapper">
 				<div id="slider_power" data-values="4,5,16"></div>
 				<input type="hidden" name="min_value" value="" />
 				<input type="hidden" name="max_value" value="" />
 			</div>
 		</div>
-		<div class="col-xs-1"></div>
+		<div class="col-xs-2"></div>
 	</div>
 </div>
 
 <div class="container slider-1" id="weigth">
 	<div class="row">
-		<div class="col-xs-12"><p>Выберите вес:</p></div>
+		<div class="col-xs-20"><p>Выберите вес:</p></div>
 	</div>
 	<div class="row">
-		<div class="col-xs-1"></div>
-		<div class="col-xs-10">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-16">
 			<div class="slider-wrapper">
 				<div id="slider_weigth" data-values="4,5,16,1050"></div>
 				<input type="hidden" name="min_value" value="" />
 				<input type="hidden" name="max_value" value="" />
 			</div>
 		</div>
-		<div class="col-xs-1"></div>
+		<div class="col-xs-2"></div>
 	</div>
 </div>
 
 <div class="container checboxes" id="floor">
 	<div class="row">
-		<div class="col-xs-12"><p>Выберите тип пола:</p></div>
+		<div class="col-xs-20"><p>Выберите тип пола:</p></div>
 	</div>
 	<div class="row">
-		<div class="col-xs-1"></div>
-		<div class="col-xs-10">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-16">
 			<input type="checkbox" name="" id="floor-chbx1"><label for="floor-chbx1">Тип 1</label>
 			<input type="checkbox" name="" id="floor-chbx2"><label for="floor-chbx2">Тип 2</label>
 			<input type="checkbox" name="" id="floor-chbx3"><label for="floor-chbx3">Тип 3</label>
 			<input type="checkbox" name="" id="floor-chbx4"><label for="floor-chbx4">Тип 4</label>
 		</div>
-		<div class="col-xs-1"></div>
+		<div class="col-xs-2"></div>
 	</div>
 </div>
 
@@ -155,11 +154,11 @@ $max_price = end($prices);
 ?>
 
 	<div class="row">
-		<div class="col-xs-12"><p>Выберите диапазон цен:</p></div>
+		<div class="col-xs-20"><p>Выберите диапазон цен:</p></div>
 	</div>
 	<div class="row">
-		<div class="col-xs-1"></div>
-		<div class="col-xs-10">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-16">
 			<div class="slider-wrapper">
 				<div id="histogram">
 					<?php 
@@ -189,26 +188,26 @@ $max_price = end($prices);
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-1"></div>
+		<div class="col-xs-2"></div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-20">
 			<label for="minCost">от<input type="text" id="minCost" value=""/></label>
 			<label for="maxCost">до<input type="text" id="maxCost" value=""/></label>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-20">
 			<br><br><br><p>Это для проверки. Слева массив цен (упорядоченный по возрастанию), а справа текстовое представление гистрограммы.</p>
 		</div>
-		<div class="col-xs-4"><pre><?php print_r($prices); // вывод для отладки?></pre></div>
-		<div class="col-xs-8"><pre><?php print_r($result); // вывод для отладки?></pre></div>
+		<div class="col-xs-10"><pre><?php print_r($prices); // вывод для отладки?></pre></div>
+		<div class="col-xs-10"><pre><?php print_r($result); // вывод для отладки?></pre></div>
 	</div>
 </div>
 
 <div class="container controls">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-20">
 			<a href="#" class="filter-button filter-button-show">Показать</a>
 			<a href="#" class="filter-button filter-button-clear">Очистить</a>
 		</div>
