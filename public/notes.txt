@@ -1,0 +1,8 @@
+Скрыть элементы в меню - звонок 8 800, корзина, сравинть.
+$('.header-middle__search, .header-middle__cart').hide();
+Клонировать и переместить объекты с названиями в меню
+$('.compare__name').each(function(){
+	$('.header-middle .row').append($('.compare__name'))
+});
+
+Дать стили
