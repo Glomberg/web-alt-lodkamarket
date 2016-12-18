@@ -5517,61 +5517,110 @@ body {
     .galleries__image--test {
       background-image: url("../img/gallery-cover.png"); }
 
-/* line 4154, C:/projects/src/assets/sass/styles.scss */
+/* GALLERY INNER PAGE */
 .gallery {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  margin-top: 50px; }
-  /* line 4165, C:/projects/src/assets/sass/styles.scss */
-  .gallery__item {
-    float: left;
-    width: 200px;
-    height: 200px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-bottom: 15px;
-    position: relative;
-    overflow: hidden; }
-    /* line 4177, C:/projects/src/assets/sass/styles.scss */
-    .gallery__item--width2 {
-      width: 400px;
-      height: 200px; }
-    /* line 4182, C:/projects/src/assets/sass/styles.scss */
-    .gallery__item--height2 {
-      width: 200px;
-      height: 400px; }
-    /* line 4192, C:/projects/src/assets/sass/styles.scss */
-    .gallery__item--more {
-      width: 400px;
-      height: 400px; }
-    /* line 4199, C:/projects/src/assets/sass/styles.scss */
-    .gallery__item:hover .card__more {
-      -webkit-transform: scale(1);
-              transform: scale(1); }
-    /* line 4209, C:/projects/src/assets/sass/styles.scss */
-    .gallery__item:hover .gallery__item-wrap {
-      opacity: 1;
-      visibility: visible; }
-  /* line 4221, C:/projects/src/assets/sass/styles.scss */
-  .gallery .card__plus {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    margin: auto; }
-  /* line 4230, C:/projects/src/assets/sass/styles.scss */
-  .gallery__item-wrap {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    opacity: 0;
-    visibility: hidden; }
+	margin-top: 50px;
+	padding-bottom: 80px;
+	position: relative;
+}
+.gallery:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.gallery-wrapper {
+	margin: 0 auto;
+}
+.gallery .grid-sizer {
+	width: 360px;
+}
+	.gallery .gallery__item {
+		float: left;
+		width: 360px;
+		height: 200px;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-color: rgba(0,0,0,0.1);
+		overflow: hidden;
+	}
+    .gallery .gallery__item--width2 {
+		width: 570px; 
+	}
+    .gallery .gallery__item--height2 {
+		height: 415px; 
+	}
+	.gallery .gallery__item--full {
+		width: 100%;
+		height: 630px;
+	}
+	
+	
+.gallery2 {
+	margin-top: 50px;
+	padding-bottom: 80px;
+	position: relative;
+}
+	.gallery2 .grid-sizer {
+		width: 230px;
+	}
+	.gallery2 .gallery__item {
+		float: left;
+		width: 230px;
+		height: 200px;
+		/*background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-color: rgba(0,0,0,0.1);
+		overflow: hidden;*/
+	}
+		.gallery2 .gallery__item:before {
+			content: '';
+			background-color: rgba(0,0,0,0.1);
+			position: absolute;
+			width: calc(100% - 15px);
+			height: calc(100% - 15px);
+			top: 7.5px;
+			left: 7.5px;
+		}
+    .gallery2 .gallery__item--width2 {
+		width: 460px; 
+	}
+    .gallery2 .gallery__item--height2 {
+		height: 400px; 
+	}
+	.gallery2 .gallery__item--full {
+		width: 1150px;
+		height: 630px;
+	}
+
+	
+	
+.gallery__item--more {
+width: 400px;
+height: 400px; }
+.gallery__item:hover .card__more {
+-webkit-transform: scale(1);
+transform: scale(1); }
+.gallery__item:hover .gallery__item-wrap {
+opacity: 1;
+visibility: visible; }
+.gallery .card__plus {
+position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+top: 0;
+margin: auto; }
+.gallery__item-wrap {
+position: absolute;
+width: 100%;
+height: 100%;
+background: rgba(255, 255, 255, 0.3);
+-webkit-transition: all 0.3s;
+transition: all 0.3s;
+opacity: 0;
+visibility: hidden; }
 
 /* line 4241, C:/projects/src/assets/sass/styles.scss */
 .compare-header {
@@ -7180,3 +7229,14 @@ body {
     color: white; }
 
 /*# sourceMappingURL=../../../sass */
+
+/* transform menu */
+.transform-menu-new-elements {
+	overflow: hidden;
+}
+.transform-menu-new-elements-wrapper > div.compare__name {
+	position: relative;
+	min-height: 1px;
+	float: left;
+	margin-top: 0;
+}
