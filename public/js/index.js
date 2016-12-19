@@ -480,12 +480,16 @@ $(document).ready(function () {
 	});
 
 	$grid.on( 'click', '.gallery__item', function( event ) {
-		$('.gallery__item').removeClass('gallery__item--full')
+		$('.gallery__item').removeClass('gallery__item--full');
 		$(  event.currentTarget  ).toggleClass('gallery__item--full');
 		$grid.packery('layout');
 		setTimeout(function(){
 			$("body,html").stop().animate({ scrollTop: $(  event.currentTarget  ).offset().top - 85 }, 1000);
 		}, 400);
+	});
+	$grid.on( 'click', '.gallery__item--full', function( event ) {
+		$('.gallery__item').removeClass('gallery__item--full');
+		$grid.packery('layout');
 	});
 	$grid.on( 'layoutComplete', function( event, laidOutItems ) {
 		//тут код, который выполнится после каждого перестроения галереи
@@ -493,24 +497,6 @@ $(document).ready(function () {
 	function ajax_append_images(items) { //items: Element, jQuery Object, NodeList, or Array of Elements
 		$grid.append( items ).packery( 'appended', items ); //метод, который добавляет элементы в сетку
 	}
-	
-	
-	
-	
-	
-	/*var $grid2 = $('.gallery2').packery({
-		itemSelector: '.gallery__item',
-		gutter: 0,
-	});
-
-	$grid2.on( 'click', '.gallery__item', function( event ) {
-		$('.gallery2 .gallery__item').removeClass('gallery__item--full')
-		$(  event.currentTarget  ).toggleClass('gallery__item--full');
-		$grid2.packery('layout');
-		setTimeout(function(){
-			$("body,html").stop().animate({ scrollTop: $(  event.currentTarget  ).offset().top - 85 }, 1000);
-		}, 400);
-	});*/
 	
 	/* end Внтуренняя страница галереи */
 	/*************************************/
@@ -523,35 +509,35 @@ $(document).ready(function () {
 	});
 	
 	function menu_transform_in() {
-		$('.header-middle').addClass('transform');
-		$('.header-middle__search, .header-middle__cart').fadeOut(400);
-		setTimeout(function(){
-			$('.header-middle .flex-items-xl-middle').append('<div class="col-xs-15 col-lg-15 transform-menu-new-elements"><div class="transform-menu-new-elements-wrapper"></div></div>');
-			$('.transform-menu-new-elements-wrapper').attr('style', $('.compare .owl-stage').attr('style'));
-			var compare_items = $('.compare .owl-item').length;
-			for (var y = 0; y < compare_items; y++) {
-				var item_width = $('.compare .owl-item:eq('+y+')').css('width');
-				var item_mr = $('.compare .owl-item:eq('+y+')').css('margin-right');
-				$('.compare .owl-item:eq('+y+') .compare__name').clone().css('width', item_width).css('margin-right', item_mr).appendTo('.transform-menu-new-elements-wrapper');
-			}
-		},400);
+		$('.header-middle .container').append('<div class="row transform"></div>');
+		$('.transform').append('<div class="col-xl-5 col-lg-5"><div><strong>СРАВНЕНИЕ ТОВАРОВ</strong></div></div>');
+		$('.transform').append('<div class="col-xs-15 col-lg-15 transform-menu-new-elements"><div class="transform-menu-new-elements-wrapper"></div></div>');
+		$('.transform-menu-new-elements-wrapper').attr('style', $('.compare .owl-stage').attr('style'));
+		var compare_items = $('.compare .owl-item').length;
+		for (var y = 0; y < compare_items; y++) {
+			var item_width = $('.compare .owl-item:eq('+y+')').css('width');
+			var item_mr = $('.compare .owl-item:eq('+y+')').css('margin-right');
+			$('.transform-menu-new-elements-wrapper').append('<div class="transform-menu-item"></div>');
+			$('.transform-menu-item:eq('+y+')').css('width', item_width).css('margin-right', item_mr);
+			$('.compare .owl-item:eq('+y+') .card__name').clone().appendTo('.transform-menu-item:eq('+y+')');
+			$('.compare .owl-item:eq('+y+') .card__bottom-block').clone().appendTo('.transform-menu-item:eq('+y+')');
+		}
+		$('.transform').hide().slideDown();
 	}
 	function menu_transform_out() {
-		$('.header-middle').removeClass('transform');
-		$('.header-middle__search, .header-middle__cart').fadeIn();
-		$('.transform-menu-new-elements').remove();
+		$('.transform').remove();
 	}
 	
 	if ($('.compare').length >= 1) {
 		var menu_rebuild_offset = $('.compare__item-wrap .card').offset().top + $('.compare__item-wrap .card').height() - $('.header-middle').height();
 		$(window).scroll(function(){
 			if ($(document).scrollTop() > menu_rebuild_offset) {
-				if (!$('.header-middle').hasClass('transform')) {
+				if (!$('.transform').length >= 1) {
 					menu_transform_in()
 				}
 				
 			} else {
-				if ($('.header-middle').hasClass('transform')) {
+				if ($('.transform').length >= 1) {
 					menu_transform_out()
 				}
 			}
