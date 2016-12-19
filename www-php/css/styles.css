@@ -51,7 +51,7 @@ nav {
 				background: #2290AB;
 			}
 		
-p {
+.tabs__container p {
 	color: #898989;
 	margin-bottom: 10px;
 }
@@ -190,9 +190,16 @@ p {
 	.slider-1 .ui-slider .ui-slider-range {
 		background: #2290AB;
 		position: absolute;
-		z-index: 3;
+		z-index: 4;
 		top: 0px;
 		height: 100%;
+	}
+	.slider-1 .ui-slider .ui-slider-range > div{
+		float: left;
+		font-size: 14px;
+		line-height: 30px;
+		text-align: center;
+		color: #FFF;
 	}
 	
 .slider-1 .slider-wrapper {

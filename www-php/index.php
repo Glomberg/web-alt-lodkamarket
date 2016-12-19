@@ -36,6 +36,7 @@
 	</div>
 </nav>
 
+<div class="tabs__container">
 <div class="container checboxes" id="series">
 	<div class="row">
 		<div class="col-xs-20"><p>Серия лодок:</p></div>
@@ -57,7 +58,7 @@
 
 <div class="container slider-1" id="length">
 	<div class="row">
-		<div class="col-xs-20"><p>Выберите длину лодки, см:</p></div>
+		<div class="col-xs-20"><p>Выберите длину лодки, см: (значения - 320,350,360,380,420,425)</p></div>
 	</div>
 	<div class="row">
 		<div class="col-xs-2"></div>
@@ -203,6 +204,7 @@ $max_price = end($prices);
 		<div class="col-xs-10"><pre><?php print_r($prices); // вывод для отладки?></pre></div>
 		<div class="col-xs-10"><pre><?php print_r($result); // вывод для отладки?></pre></div>
 	</div>
+</div>
 </div>
 
 <div class="container controls">

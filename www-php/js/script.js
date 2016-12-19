@@ -3,7 +3,7 @@ $(document).ready(function(){
 	!function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
 	
 	//нажатие на элемент меню и отображение нужного раздела фильтра
-	$('.filter-page > div[id]').each(function(){
+	$('.tabs__container > div[id]').each(function(){
 		$(this).hide();
 	});
 	$('.filter-page ul a').on('click', function(e){
@@ -12,8 +12,8 @@ $(document).ready(function(){
 			var target = $(this).attr('href');
 			$('.filter-page ul li').removeAttr('class');
 			$(this).parent('li').addClass('active');
-			$('.filter-page > div[id]').hide();
-			$('.filter-page > div[id="'+target.substr(1)+'"]').slideDown();
+			$('.tabs__container > div[id]').hide();
+			$('.tabs__container > div[id="'+target.substr(1)+'"]').slideDown();
 		}
 	});
 	
@@ -44,17 +44,23 @@ $(document).ready(function(){
 			max: values[values.length - 1],
 			values: [values[key_min],values[key_max]],
 			step: 1,
-			animate: true,
+			/*animate: true,*/
 			create: function(event, ui) {
 				slider_1.append('<div class="scale"></div>');
 				for (var z=0; z<true_values.length; z++) {
 					/*slider_1.children('.scale').append('<div style="left:'+ 100/(true_values.length-1)*z +'%;"><span>'+ true_values[z] +'<span></div>');*/ // это старый вариант
-					slider_1.children('.scale').append('<div style="left:'+ 100/(true_values.length-1)*z +'%;width:'+ 100/(true_values.length-1) +'%;"><span>'+ Math.floor((true_values[z]+true_values[z+1])/2)  +'<span></div>');
+					/*slider_1.children('.scale').append('<div style="left:'+ 100/(true_values.length-1)*z +'%;width:'+ 100/(true_values.length-1) +'%;"><span>'+ Math.floor((true_values[z]+true_values[z+1])/2)  +'<span></div>');*/ // это еще один старый вариант
+					slider_1.children('.scale').append('<div style="left:'+ 100/(true_values.length-1)*z +'%;width:'+ 100/(true_values.length-1) +'%;"><span>'+ true_values[z] +'<span></div>');
 				}
 				var current_min = true_values[slider_1.slider("values",0)-1];
 				var current_max = true_values[slider_1.slider("values",1)-1];
 				slider_1.siblings('input[name="min_value"]').val(current_min);
 				slider_1.siblings('input[name="max_value"]').val(current_max);
+				// белый текст внутри слайдера
+				slider_1.find('.ui-slider-range').children('div').remove();
+				for (var j = 0, k = slider_1.slider("values",0); j < slider_1.slider("values",1) - slider_1.slider("values",0); j++, k++) {
+					slider_1.find('.ui-slider-range').append('<div style="width:'+100/(slider_1.slider("values",1) - slider_1.slider("values",0))+'%;">'+true_values[k-1]+'</div>');
+				}
 			},
 			stop: function(event, ui) {
 				var current_min = true_values[slider_1.slider("values",0)-1];
@@ -63,10 +69,16 @@ $(document).ready(function(){
 				slider_1.siblings('input[name="max_value"]').val(current_max);
 			},
 			slide: function(event, ui){
+				if (ui.values[0] + 1 > ui.values[1]) { return false; }
 				var current_min = true_values[slider_1.slider("values",0)-1];
 				var current_max = true_values[slider_1.slider("values",1)-1];
 				slider_1.siblings('input[name="min_value"]').val(current_min);
 				slider_1.siblings('input[name="max_value"]').val(current_max);
+				// белый текст внутри слайдера
+				slider_1.find('.ui-slider-range').children('div').remove();
+				for (var j = 0, k = ui.values[0]; j < ui.values[1] - ui.values[0]; j++, k++) {
+					slider_1.find('.ui-slider-range').append('<div style="width:'+100/(ui.values[1] - ui.values[0])+'%;">'+true_values[k-1]+'</div>');
+				}
 			}
 		});
 	});
