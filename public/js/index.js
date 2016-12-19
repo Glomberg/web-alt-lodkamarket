@@ -476,7 +476,7 @@ $(document).ready(function () {
 	
 	var $grid = $('.gallery').packery({
 		itemSelector: '.gallery__item',
-		gutter: 15
+		gutter: 0
 	});
 
 	$grid.on( 'click', '.gallery__item', function( event ) {
@@ -498,7 +498,7 @@ $(document).ready(function () {
 	
 	
 	
-	var $grid2 = $('.gallery2').packery({
+	/*var $grid2 = $('.gallery2').packery({
 		itemSelector: '.gallery__item',
 		gutter: 0,
 	});
@@ -510,7 +510,7 @@ $(document).ready(function () {
 		setTimeout(function(){
 			$("body,html").stop().animate({ scrollTop: $(  event.currentTarget  ).offset().top - 85 }, 1000);
 		}, 400);
-	});
+	});*/
 	
 	/* end Внтуренняя страница галереи */
 	/*************************************/
